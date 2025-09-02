@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Oleh | Personal Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(120deg, #e0e7ff 0%, #f8fafc 100%);
+            color: #222;
+            /* Додаємо футбольний м'яч на фон */
+            background-image: url('https://pngimg.com/uploads/football/football_PNG52785.png');
+            background-repeat: no-repeat;
+            background-position: right bottom;
+            background-size: 220px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 3.5rem auto;
+            background: #fff;
+            border-radius: 22px;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.10);
+            padding: 3.2rem 2.5rem 2.5rem 2.5rem;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+        .avatar {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border: 3px solid #2563eb;
+        }
+        .header-info h1 {
+            margin: 0;
+            font-size: 2.7rem;
+            color: #2563eb;
+            letter-spacing: 1px;
+        }
+        .header-info p {
+            margin: 0.2rem 0 0 0;
+            font-size: 1.25rem;
+            color: #444;
+        }
+        .about {
+            font-size: 1.18rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.7;
+        }
+        .about-icons {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1.2rem;
+        }
+        .about-icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 1.1rem;
+            color: #2563eb;
+        }
+        .about-icon span {
+            font-size: 2.3rem;
+            margin-bottom: 0.3rem;
+        }
+        .insta-photos {
+            margin-top: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .insta-photos img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+            border: 2px solid #e0e7ef;
+        }
+        ul.skills {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-bottom: 2.2rem;
+        }
+        ul.skills li {
+            background: #e0e7ef;
+            display: inline-block;
+            margin: 0.3rem 1rem 0.3rem 0;
+            padding: 0.7rem 1.5rem;
+            border-radius: 22px;
+            font-size: 1.13rem;
+            transition: background 0.2s;
+        }
+        ul.skills li:hover {
+            background: #c7d2fe;
+        }
+        .social-links {
+            margin-top: 1.5rem;
+        }
+        .social-links a {
+            display: inline-block;
+            margin-right: 1.5rem;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.13rem;
+            transition: color 0.2s;
+        }
+        .social-links a:hover {
+            color: #1e40af;
+            text-decoration: underline;
+        }
+        .menu-btn {
+            display: block;
+            margin: 0 auto 2.5rem auto;
+            padding: 1rem 2rem;
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            border-radius: 24px;
+            font-size: 1.18rem;
+            cursor: pointer;
+            transition: background 0.2s;
+            box-shadow: 0 2px 8px rgba(37,99,235,0.10);
+        }
+        .menu-btn:hover {
+            background: #1e40af;
+        }
+        .modal-menu {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0; top: 0;
+            width: 100%; height: 100%;
+            background: rgba(37,99,235,0.18);
+        }
+        .modal-content {
+            background: #fff;
+            margin: 10% auto;
+            padding: 2.5rem 2rem;
+            border-radius: 18px;
+            max-width: 370px;
+            box-shadow: 0 4px 24px rgba(37,99,235,0.13);
+            position: relative;
+            animation: fadeIn 0.3s;
+        }
+        .close {
+            position: absolute;
+            top: 14px;
+            right: 18px;
+            font-size: 2rem;
+            color: #2563eb;
+            cursor: pointer;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-30px);}
+            to { opacity: 1; transform: translateY(0);}
+        }
+        @media (max-width: 900px) {
+            .container {
+                max-width: 98vw;
+                padding: 2rem 0.5rem;
+            }
+            .header-info h1 {
+                font-size: 2rem;
+            }
+            .about-icons {
+                gap: 1rem;
+            }
+            .insta-photos img {
+                width: 90px;
+                height: 90px;
+            }
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem 0.2rem;
+            }
+            .header {
+                flex-direction: column;
+                gap: 0.7rem;
+            }
+            .avatar {
+                width: 70px;
+                height: 70px;
+            }
+            .insta-photos img {
+                width: 70px;
+                height: 70px;
+            }
+            body {
+                background-size: 90px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Guest" class="avatar">
+            <div class="header-info">
+                <h1>Oleh Oliinyk</h1>
+                <p>Personal Website | Footballer &amp; Music Lover</p>
+            </div>
+        </div>
+        <div class="about">
+            Hi! I'm Oleh — a footballer with number <b>21</b>, playing as <b>LW</b> (left winger) and <b>RW</b> (right winger).
+            Music is my passion, I have my own Spotify playlist called <b>something english</b>.
+            I'm a big fan of social media, especially Instagram.
+            <div class="about-icons">
+                <div class="about-icon"><span>⚽</span>Football</div>
+                <div class="about-icon"><span>🎵</span>Music</div>
+                <div class="about-icon"><span>📱</span>Instagram</div>
+            </div>
+            <div class="insta-photos">
+                <img src="https://images.unsplash.com/photo-1517649763962-0c623066013b?auto=format&fit=crop&w=400&q=80" alt="Football">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Music">
+                <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Instagram">
+            </div>
+        </div>
+        <h2>Skills</h2>
+        <ul class="skills">
+            <li>Video Editing</li>
+            <li>Photo Editing</li>
+        </ul>
+        <div class="social-links">
+            <a href="https://www.instagram.com/0leh.0liinyk/?next=%2F" target="_blank">Instagram</a>
+            <a href="https://open.spotify.com/playlist/52QnWcMjQpFbfvMY5Fs5oK?si=-XyjFKb5SRG7-BulhLqVLw" target="_blank">Spotify Playlist</a>
+        </div>
+        <button class="menu-btn" onclick="openMenu()">How to contact me</button>
+    </div>
+    <!-- Modal menu -->
+    <div id="modalMenu" class="modal-menu">
+        <div class="modal-content">
+            <span class="close" onclick="closeMenu()">&times;</span>
+            <h2>Contacts</h2>
+            <div class="contact-info">
+                <span class="contact-label">Email:</span>
+                <a href="mailto:Oleholiinyk03@gmail.com">Oleholiinyk03@gmail.com</a>
+                <br>
+                <span class="contact-label">Phone:</span>
+                <a href="tel:+15139403619">+1&nbsp;513&nbsp;940&nbsp;3619</a>
+                <br>
+                <span class="contact-label">Instagram:</span>
+                <a href="https://www.instagram.com/0leh.0liinyk/?next=%2F" target="_blank">
+                    @0leh.0liinyk
+                </a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function openMenu() {
+            document.getElementById('modalMenu').style.display = 'block';
+        }
+        function closeMenu() {
+            document.getElementById('modalMenu').style.display = 'none';
+        }
+        window.onclick = function(event) {
+            var modal = document.getElementById('modalMenu');
+            if (event.target === modal) {
+                closeMenu();
+            }
+        }
+    </script>
+</body>
+</html>
+        // Закрити по кліку поза модалкою
+        window.onclick = function(event) {
+            var modal = document.getElementById('modalMenu');
+            if (event.target === modal) {
+                closeMenu();
+            }
+        }
+    </script>
+</body>
+</html>
